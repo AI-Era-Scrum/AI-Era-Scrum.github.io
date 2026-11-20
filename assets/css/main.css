@@ -555,6 +555,10 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .prose li + li { margin-top: 0.45em; }
 .prose blockquote { font-family: var(--serif); font-style: italic; font-size: 1.28rem; line-height: 1.45; border-left: 5px solid var(--green); padding: 4px 0 4px 22px; }
 .prose blockquote em { font-style: normal; font-family: var(--body); font-size: 0.82rem; font-weight: 600; color: var(--ink-dim); }
+/* Guide quotes inside posts: the home page sizes them for compact cards, so scale the gloss and source up to read with the post text and align them under the quote */
+.prose .gq { margin-block: 1.6em; }
+.prose .gq-gloss { margin-top: 10px; padding-left: 27px; font-size: 1rem; line-height: 1.55; }
+.prose .gq figcaption { margin-top: 8px; padding-left: 27px; font-size: 0.85rem; }
 .prose code { font-size: 0.9em; background: #e7e6d8; padding: 0.12em 0.4em; border-radius: 5px; }
 .prose pre { background: var(--pitch-deep); color: var(--chalk); padding: 18px; border-radius: 12px; overflow-x: auto; }
 .prose pre code { background: none; padding: 0; }
