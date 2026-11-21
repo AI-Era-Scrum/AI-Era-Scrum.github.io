@@ -1,6 +1,6 @@
 ---
 title: "Kisah Awal"
-description: "Semuanya bermula di samping ranjang rumah sakit. Bagaimana proxy Product Owner, struktur pra-AI, dan kecepatan pengembangan AI melahirkan Scrum: AI Addendum."
+description: "Semuanya bermula di samping ranjang rumah sakit. Bagaimana proxy Product Owner, struktur pra-AI, dan kecepatan pengembangan AI melahirkan The AI-Era Scrum."
 ref: origin-story
 authors: [ricky]
 ---
@@ -208,7 +208,7 @@ Saya bilang ke beliau apa yang saya suka dari saran itu: kita mungkin akan mudah
 
 ## Selebihnya adalah sejarah
 
-Percakapan itu menjadi [Scrum: AI Addendum]({{ '/id/' | relative_url }}): empat tambahan untuk Scrum, tidak ada yang dibuang, masing-masing dicek kata demi kata terhadap Scrum Guide.
+Percakapan itu menjadi [The AI-Era Scrum]({{ '/id/' | relative_url }}): empat tambahan untuk Scrum, tidak ada yang dibuang, masing-masing dicek kata demi kata terhadap Scrum Guide.
 
 Kalau Anda seorang PO yang bekerja di hari Minggu demi mengimbangi tim yang tiba-tiba membangun lima kali lebih cepat, tulisan ini mungkin menyelamatkan kesehatan Anda di masa depan. Kalau Anda Scrum Master yang merasa ada yang janggal tapi belum bisa menamainya, tulisan ini juga untuk Anda.
 

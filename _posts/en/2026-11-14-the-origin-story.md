@@ -1,6 +1,6 @@
 ---
 title: "The Origin Story"
-description: "It started next to a hospital bed. How a proxy Product Owner, a pre-AI structure and AI development speed led to Scrum: AI Addendum."
+description: "It started next to a hospital bed. How a proxy Product Owner, a pre-AI structure and AI development speed led to The AI-Era Scrum."
 ref: origin-story
 authors: [ricky]
 ---
@@ -207,7 +207,7 @@ I told him what I liked about that suggestion: we might easily find allies in th
 
 ## The rest is history
 
-That conversation became [Scrum: AI Addendum]({{ '/' | relative_url }}): four additions to Scrum, nothing removed, each one checked word for word against the Scrum Guide.
+That conversation became [The AI-Era Scrum]({{ '/' | relative_url }}): four additions to Scrum, nothing removed, each one checked word for word against the Scrum Guide.
 
 If you are a PO working Sundays to keep up with a team that suddenly builds five times faster, this might save your future health. If you are a Scrum Master who feels something is off but can't name it yet, this is for you too.
 

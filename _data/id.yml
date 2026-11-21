@@ -16,9 +16,9 @@ nav:
   language: "Bahasa"
 
 hero:
-  eyebrow: "Usulan adendum untuk Scrum Guide 2020"
-  name: "Scrum: AI Addendum"
-  tagline: "AI membantu mewujudkan Scrum yang ideal."
+  eyebrow: "Usulan tambahan untuk Scrum Guide 2020"
+  name: "The AI-Era Scrum"
+  tagline: "AI Justru Mewujudkan Scrum yang ideal."
   lede: >-
     Kini AI mengerjakan hampir seluruh proses mengubah ide menjadi produk yang
     berjalan. Itu tidak menggantikan Scrum. AI justru menyingkirkan
@@ -318,7 +318,7 @@ blog:
   back: "Semua tulisan"
   read_addendum: "Baca adendumnya"
   other_lang: "Read in English"
-  cta_title: "Tulisan ini bagian dari Scrum: AI Addendum."
+  cta_title: "Tulisan ini bagian dari The AI-Era Scrum."
   cta_body: "Empat tambahan untuk Scrum bagi tim yang sebagian besar pekerjaan membangunnya dikerjakan AI, masing-masing dicocokkan dengan Scrum Guide."
 
 footer:

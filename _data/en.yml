@@ -16,9 +16,9 @@ nav:
   language: "Language"
 
 hero:
-  eyebrow: "A proposed addendum to the 2020 Scrum Guide"
-  name: "Scrum: AI Addendum"
-  tagline: "AI helps enable the ideal Scrum."
+  eyebrow: "A proposed addition to the 2020 Scrum Guide"
+  name: "The AI-Era Scrum"
+  tagline: "AI Enables the Ideal Scrum."
   lede: >-
     AI now does almost all of the work of turning an idea into a working
     product. That doesn’t replace Scrum. It clears away the workarounds that
@@ -294,7 +294,7 @@ blog:
   back: "All posts"
   read_addendum: "Read the addendum"
   other_lang: "Baca dalam Bahasa Indonesia"
-  cta_title: "This post is part of Scrum: AI Addendum."
+  cta_title: "This post is part of The AI-Era Scrum."
   cta_body: "Four additions to Scrum for teams where AI does most of the building, each checked against the Scrum Guide."
 
 footer:

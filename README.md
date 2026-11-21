@@ -1,6 +1,6 @@
-# Scrum: AI Addendum
+# The AI-Era Scrum
 
-Website for the proposed "Scrum: AI Addendum", created by Ricky Saif and Ahmad Firdaus.
+Website for "The AI-Era Scrum", a proposed addition to the Scrum Guide, created by Ricky Saif and Ahmad Firdaus.
 English at `/`, Bahasa Indonesia at `/id/`. Built with Jekyll, hosted on GitHub Pages
 (no build step of your own: GitHub builds it on every push).
 
