@@ -153,7 +153,7 @@ length:
   learn: "learn"
   outcome_hit: "Business outcome reached"
   outcome_miss: "Business outcome not reached"
-  review: "Sprint Review"
+  review: "Sprint<br>Review"
   talk_short: "The talk is about timeline: “Is it done? When?”"
   talk_full: "The talk is about value: profit, loss and user engagement."
   po_short: "The real Product Owner has no reason to attend."

@@ -369,7 +369,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .board > * { width: 100%; }
 .board .wb { width: min(100%, max(320px, calc(80svh - 262px))); }
 .board figcaption { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-dim); }
-.wb { position: relative; background: #fbfbf8; border-radius: 10px; border: 5px solid #d8d9d2; box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.06), 0 10px 30px -14px rgba(0, 0, 0, 0.5); padding: 6px 6px 14px; }
+.wb { position: relative; background: #fbfbf8; border-radius: 10px; border: 5px solid #d8d9d2; box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.05), 0 10px 30px -14px rgba(0, 0, 0, 0.5); padding: 6px 6px 14px; }
 .wb svg { display: block; width: 100%; height: auto; font-family: "Caveat", "Comic Sans MS", cursive; }
 .wb-tray { position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%); width: 46%; height: 10px; background: #c9cac3; border-radius: 0 0 6px 6px; display: flex; gap: 10px; justify-content: center; align-items: center; }
 .wb-tray i { display: block; height: 4px; border-radius: 2px; }
@@ -380,7 +380,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .mk-text { font-size: 22px; fill: #b3261e; }
 .mk-r circle { fill: none; stroke: #b3261e; stroke-width: 3; stroke-dasharray: 160; stroke-dashoffset: 160; transition: stroke-dashoffset 0.7s ease-out; }
 .mk-r text { fill: #b3261e; font-size: 30px; }
-.mk-r .mk-small { font-size: 15px; font-weight: 500; }
+.mk-r .mk-small { font-size: 20px; font-weight: 500; }
 .mk-verdict { font-size: 28px; fill: #b3261e; }
 .pi { transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0.2); transform-origin: 60px 40px; transform-box: fill-box; opacity: 0; transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.3s; }
 .pi rect { fill: #ffe066; }
