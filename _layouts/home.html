@@ -150,7 +150,7 @@ layout: default
           <li class="cap{% if forloop.last %} cap-verdict{% endif %}" data-cap="{{ forloop.index0 }}">{{ c }}</li>
           {%- endfor %}
         </ol>
-          <div class="step-meta"><p class="step-count"><span data-step-n>1</span> / {{ t.risk.steps.size }}</p><p class="demo-note">{{ t.risk.note }}</p></div>
+          <div class="step-meta"><p class="step-count"><span data-step-n>1</span> / {{ t.risk.steps.size }}</p></div>
         </div>
         <button type="button" class="step-btn" data-dir="1" aria-label="{{ t.risk.next }}">›</button>
       </div>
@@ -227,7 +227,7 @@ layout: default
           <div class="rounds">
             {%- for r in (1..5) %}
             <div class="rd" style="--i:{{ forloop.index0 }}">
-              <i class="rd-build">{{ t.length.build }}</i><i class="rd-users">{{ t.length.users }}</i><i class="rd-learn">{{ t.length.learn }}</i>
+              <i class="rd-build">{{ t.length.build }}</i><i class="rd-users">{{ t.length.users_box | default: t.length.users }}</i><i class="rd-learn">{{ t.length.learn }}</i>
             </div>
             {%- endfor %}
           </div>
@@ -242,12 +242,16 @@ layout: default
       </div>
       {%- endfor %}
     </div>
+    <div class="len-ctl" id="len-ctl" role="group" aria-label="{{ t.length.counter }}" hidden>
+      <button type="button" class="lc-btn" data-act="prev" aria-label="{{ t.length.ctl.prev }}">‹</button>
+      <button type="button" class="lc-btn lc-play" data-act="play" aria-label="{{ t.length.ctl.pause }}" data-pause="{{ t.length.ctl.pause }}" data-play="{{ t.length.ctl.play }}"><span class="ic-pause" aria-hidden="true"></span><span class="ic-play" aria-hidden="true"></span></button>
+      <button type="button" class="lc-btn" data-act="next" aria-label="{{ t.length.ctl.next }}">›</button>
+    </div>
     <ul class="legend legend-ink">
       <li><i class="sw sw-build"></i>{{ t.length.build }}</li>
       <li><i class="sw sw-users"></i>{{ t.length.users }}</li>
       <li><i class="sw sw-learn"></i>{{ t.length.learn }}</li>
     </ul>
-    <p class="demo-note demo-note-ink">{{ t.length.note }}</p>
     </div>
     <div class="sub sub-b">
     <div class="len-cols">

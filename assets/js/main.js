@@ -213,31 +213,72 @@
     }, { threshold: 0.3 }).observe(demo);
   }
 
-  /* ---- sprint length: rounds with users ---- */
+  /* ---- sprint length: iterations with users ----
+     One discrete state s (0..6) drives both lanes, so autoplay, pause and the
+     step buttons all show the same frames. The full lane shows min(s,5)
+     iterations and is done at 6; the short lane shows min(s,2) and is done at 3. */
   const len = document.getElementById("len");
   if (len) {
     const lanes = { short: len.querySelector(".ln-short"), full: len.querySelector(".ln-full") };
-    const ROUNDS = { short: 2, full: 5 }, STEP = 1100, HOLD = 5000;
-    let timers = [], inView = false;
-    const reset = () => {
-      timers.forEach(clearTimeout); timers = [];
-      Object.values(lanes).forEach((l) => { l.classList.remove("done"); l.querySelectorAll(".rd").forEach((r) => r.classList.remove("on")); l.querySelector("[data-count]").textContent = "0"; });
-    };
-    const play = () => {
-      reset();
+    const ROUNDS = { short: 2, full: 5 }, DONE = { short: 3, full: 6 }, LAST = 6;
+    const FIRST = 600, STEP = 1100, HOLD = 5000;
+    const ctl = document.getElementById("len-ctl");
+    const playBtn = ctl && ctl.querySelector("[data-act=play]");
+    let s = 0, timer = 0, inView = false, paused = reduced;
+    const draw = (n) => {
+      s = n;
       Object.entries(lanes).forEach(([k, l]) => {
-        const rds = l.querySelectorAll(".rd");
-        for (let i = 0; i < ROUNDS[k]; i++) timers.push(setTimeout(() => { rds[i].classList.add("on"); l.querySelector("[data-count]").textContent = i + 1; }, 600 + i * STEP));
-        timers.push(setTimeout(() => l.classList.add("done"), 600 + ROUNDS[k] * STEP + 200));
+        const shown = Math.min(n, ROUNDS[k]);
+        l.querySelectorAll(".rd").forEach((r, i) => r.classList.toggle("on", i < shown));
+        l.querySelector("[data-count]").textContent = shown;
+        l.classList.toggle("done", n >= DONE[k]);
       });
-      timers.push(setTimeout(play, 600 + ROUNDS.full * STEP + HOLD));
     };
-    const finish = () => { Object.entries(lanes).forEach(([k, l]) => { l.querySelectorAll(".rd").forEach((r, i) => r.classList.toggle("on", i < ROUNDS[k])); l.querySelector("[data-count]").textContent = ROUNDS[k]; l.classList.add("done"); }); };
-    if (reduced || !("IntersectionObserver" in window)) finish();
+    const tick = () => { draw((s + 1) % (LAST + 1)); timer = setTimeout(tick, s === LAST ? HOLD : STEP); };
+    const run = (delay) => { clearTimeout(timer); timer = setTimeout(tick, delay); };
+    const setPaused = (p) => {
+      paused = p;
+      if (!ctl) return;
+      ctl.classList.toggle("paused", p);
+      playBtn.setAttribute("aria-label", p ? playBtn.dataset.play : playBtn.dataset.pause);
+    };
+    if (ctl) {
+      ctl.hidden = false;
+      setPaused(paused);
+      ctl.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-act]");
+        if (!b) return;
+        clearTimeout(timer);
+        if (b.dataset.act === "play") {
+          if (paused) { setPaused(false); if (s === LAST) draw(0); run(s === 0 ? FIRST : STEP); }
+          else setPaused(true);
+        } else {
+          setPaused(true);
+          draw((s + LAST + 1 + (b.dataset.act === "next" ? 1 : -1)) % (LAST + 1));
+        }
+      });
+    }
+    if (reduced || !("IntersectionObserver" in window)) draw(LAST);
     else new IntersectionObserver((e) => {
       const was = inView; inView = e[0].isIntersecting;
-      if (inView && !was) play();
-      if (!inView) { timers.forEach(clearTimeout); timers = []; }
+      if (inView && !was && !paused) { draw(0); run(FIRST); }
+      if (!inView) clearTimeout(timer);
     }, { threshold: 0.3 }).observe(len);
+  }
+
+  /* ---- show or hide the free Indonesian translations of Scrum Guide quotes ---- */
+  const glossBtn = document.getElementById("gloss-btn");
+  if (glossBtn) {
+    const root = document.documentElement;
+    const set = (on, save) => {
+      root.classList.toggle("gloss-on", on);
+      glossBtn.setAttribute("aria-pressed", on);
+      if (save) { try { localStorage.setItem("gloss", on ? "1" : "0"); } catch (e) {} }
+    };
+    let on = false;
+    try { on = localStorage.getItem("gloss") === "1"; } catch (e) {}
+    glossBtn.hidden = false;
+    set(on, false);
+    glossBtn.addEventListener("click", () => set(!root.classList.contains("gloss-on"), true));
   }
 })();

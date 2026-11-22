@@ -52,25 +52,25 @@ core:
   pre:
     era: "Sprint pra-AI"
     title: "Siklus Review Delivery"
-    label: "Sebuah Sprint digambarkan sebagai siklus. Membangun mengisi hampir seluruhnya, tiga item berurutan, dan Sprint Review di akhir memeriksa apakah item-item itu sudah di-deliver."
+    label: "Sebuah Sprint digambarkan sebagai siklus. Development mengisi hampir seluruhnya, tiga item berurutan, dan Sprint Review di akhir memeriksa apakah item-item itu sudah di-deliver."
     items: ["Halaman referral", "Email undangan", "Banner hadiah"]
     result: "3 dari 3 selesai ✓"
     question: "“Sudah selesai? Sesuai jadwal?”"
-    body: "Membangun mengisi seluruh Sprint. Pengguna baru bertemu hasilnya di Sprint Review, jadi Review memeriksa delivery: apa yang sudah dibangun dan apakah sesuai jadwal."
+    body: "Development mengisi seluruh Sprint. Pengguna baru melihat Inkremen di akhir, jadi Sprint Review memeriksa delivery: apa yang sudah dibangun dan apakah sesuai jadwal. Karena Sprint hanya fokus ke delivery sebagian kecil progress, akhirnya di banyak kasus pengguna dan stakeholder bahkan tidak diundang ke Sprint Review."
   post:
     era: "Sprint pasca-AI"
     title: "Siklus Review Business Outcome"
-    label: "Sprint dengan panjang yang sama digambarkan sebagai siklus. Membangun hanya sebentar; tiga putaran bangun, pengguna, dan validasi mengisi Sprint, dan Sprint Review memeriksa apakah business outcome tercapai."
+    label: "Sprint dengan panjang yang sama digambarkan sebagai siklus. Development hanya sebentar; tiga iterasi development, pengguna, dan validasi mengisi Sprint, dan Sprint Review memeriksa apakah business outcome tercapai."
     metric: "Pelanggan yang mengajak teman"
     result: "Business outcome tercapai ✓"
     question: "“Apa business outcome-\u2060nya? Apa yang kita pelajari dari situ?”"
-    body: "Membangun hanya butuh sebagian kecil Sprint. Sisanya untuk putaran bersama pengguna, jadi Review memeriksa business outcome: profit, rugi, keterlibatan pengguna."
+    body: "Development hanya butuh sebagian kecil Sprint. Sisanya untuk meninjau perilaku & pendapat pengguna, lalu brainstorming ide lain jika business outcome belum tercapai, jadi Sprint Review memeriksa business outcome: untung, rugi, dan user engagement."
   legend:
     plan: "rencana"
-    build: "bangun"
+    build: "development"
     users: "pengguna"
     validate: "validasi"
-  note: "Ilustrasi mekanismenya, bukan data hasil pengukuran."
+  note: "Semua ilustrasi di halaman ini hanya menggambarkan mekanismenya, bukan data hasil pengukuran."
 
 shift:
   kicker: "Pergeseran"
@@ -89,17 +89,17 @@ shift:
     - token: "Dev"
       role: "Developers"
       before: "Sebagian besar Sprint habis untuk detail implementasi."
-      now: "Terdorong berpikir lebih tinggi dan lebih abstrak, sehingga punya lebih banyak ruang dan empati untuk pengguna."
+      now: "Dengan AI mengambil alih detail implementasi, Developers jadi terpaksa bergeser ke pekerjaan yang lebih butuh zoom-out & berpikir abstrak. Memberi instruksi ke AI pun hanya jadi sebagian kecil pekerjaan. Mayoritas waktu akan habis untuk merekrut sampel pengguna, wawancara pengguna, melihat metrik penggunaan, dan brainstorming cara mencapai business outcome yang ditentukan oleh Product Owner."
     - token: "SM"
       role: "Scrum Master"
       before: "Banyak energi habis untuk menjaga proses delivery yang panjang tetap berjalan."
-      now: "Leluasa fokus memfasilitasi interaksi Developers dengan pengguna, tempat asumsi divalidasi dan nilai tercipta."
+      now: "Jadi bisa fokus memfasilitasi interaksi Developers dengan pengguna, tempat asumsi divalidasi dan nilai tercipta. Tentunya dengan tetap memastikan lancarnya interaksi antara stakeholder, Product Owner, dan Developers."
 
 risk:
   bridge: "Mengapa begitu fokus pada pengguna?"
   kicker: "Risiko"
   title: "Kecepatan AI tanpa pengguna: Waterfall yang lebih cepat."
-  intro: "Membangun jadi cepat. Lihat apa yang mengisi waktu yang terbebas."
+  intro: "Kalau development jadi lebih cepat, waktu lebihnya dipakai buat apa ya?"
   prev: "Langkah sebelumnya"
   next: "Langkah berikutnya"
   track_label: "Satu Sprint"
@@ -107,7 +107,7 @@ risk:
   after: "Dengan AI"
   stages:
     plan: "Plan"
-    build: "Bangun"
+    build: "Development"
     test: "Review"
   n3: "3 item"
   n9: "9 item"
@@ -118,16 +118,16 @@ risk:
   batch: "6 dari 9 item belum di-review"
   steps:
     - "Sebelum AI: tiga item direncanakan, dibangun, dan di-review. Pengguna melihatnya di Sprint Review."
-    - "AI datang. Membangun tiga item yang sama hanya butuh sebagian kecil Sprint."
+    - "AI datang. Development tiga item yang sama hanya butuh sebagian kecil Sprint."
     - "Kebiasaannya tetap: pengguna baru melihat hasilnya di Sprint Review."
-    - "Maka pembangunan membesar lagi mengisi Sprint, kini dengan sembilan item."
+    - "Maka development membesar lagi mengisi Sprint, kini dengan sembilan item."
     - "Proses dan durasi Review tetap sama, jadi hanya tiga dari sembilan yang ter-review. Enam item belum di-review: kurang percaya diri untuk menemui pengguna."
     - "Pengembangan bertenaga AI + kebiasaan Scrum pra-AI = Waterfall yang lebih cepat."
   board:
     title: "Cerita yang sama di papan tulis"
     habit: "kebiasaan tak berubah:|pengguna hanya di Review"
     notes:
-      - "Kecepatan membangun ↑"
+      - "Kecepatan development ↑"
       - "Waktu kosong di Sprint ↑"
       - "Item per Sprint ↑"
       - "Item belum di-review ↑"
@@ -136,54 +136,62 @@ risk:
     loop: "R"
     loop_note: "lingkaran penguat"
     verdict: "= Waterfall, lebih cepat"
-  note: "Ilustrasi mekanismenya, bukan data hasil pengukuran."
 
 length:
   kicker: "Panjang Sprint"
   title: "Karena itu pula, memperpendek Sprint adalah langkah yang keliru."
   intro: >-
-    Dengan AI, membangun dan menguji berlangsung cepat. Yang langka di dalam
-    Sprint bukan lagi waktu membangun, melainkan putaran bersama pengguna.
+    Dengan AI, development dan pengujian berlangsung cepat. Yang langka di dalam
+    Sprint bukan lagi waktu development, melainkan iterasi bersama pengguna.
     Sprint butuh ruang bagi Developers untuk mendatangi pengguna,
     memvalidasi asumsi tentang nilai, membangun ulang solusinya, dan
     mendatangi lagi, beberapa kali jika perlu, sampai business outcome
     tercapai.
   short: "Sprint yang dipendekkan"
   full: "Sprint penuh"
-  round: "Putaran"
-  build: "bangun"
+  round: "Iterasi"
+  build: "development"
   users: "pengguna"
+  users_box: "peng-<br>guna"
   learn: "belajar"
   outcome_hit: "Business outcome tercapai"
   outcome_miss: "Business outcome belum tercapai"
-  review: "Sprint Review"
+  review: "Sprint<br>Review"
   talk_short: "Pembicaraannya soal timeline: “Sudah selesai? Kapan?”"
-  talk_full: "Pembicaraannya soal nilai: profit, rugi, keterlibatan pengguna."
+  talk_full: "Pembicaraannya soal nilai: untung, rugi, dan user engagement."
   po_short: "Product Owner yang sebenarnya tidak punya alasan untuk hadir."
   po_full: "Product Owner yang sebenarnya punya segala alasan untuk hadir."
-  counter: "Putaran bersama pengguna"
+  counter: "Iterasi bersama pengguna"
+  ctl:
+    prev: "Langkah sebelumnya"
+    next: "Langkah berikutnya"
+    pause: "Jeda animasi"
+    play: "Putar animasi"
   cue_bad: "Buruk"
   cue_good: "Baik"
   columns:
     - title: "Scrum pra-AI"
-      body: "Membangun menghabiskan seluruh Sprint, sehingga Sprint Review lebih banyak membahas timeline dan output. Product Owner yang sebenarnya tidak punya insentif untuk hadir, dan lahirlah proxy atau scribe Product Owner."
+      body: "Development menghabiskan seluruh Sprint, sehingga Sprint Review lebih banyak membahas timeline dan output. Product Owner yang sebenarnya tidak punya insentif untuk hadir, dan lahirlah proxy atau scribe Product Owner."
       verdict: bad
     - title: "AI + Sprint yang dipendekkan"
-      body: "Putaran bersama pengguna makin sedikit, outcome terpotong, dan Review kembali membahas timeline. Keuntungan kecepatan habis untuk lebih banyak rapat, bukan lebih banyak validasi."
+      body: "Iterasi bersama pengguna makin sedikit, outcome terpotong, dan Review kembali membahas timeline. Keuntungan kecepatan habis untuk lebih banyak rapat, bukan lebih banyak validasi."
       verdict: bad
     - title: "AI + Sprint penuh"
-      body: "Beberapa putaran bersama pengguna muat dalam satu Sprint, sehingga business outcome benar-benar bisa dicapai dan Review menjadi percakapan tentang profit, rugi, dan keterlibatan. Percakapan seperti itulah yang ingin diikuti Product Owner yang sebenarnya."
+      body: "Beberapa iterasi bersama pengguna muat dalam satu Sprint, sehingga business outcome benar-benar bisa dicapai dan Review menjadi percakapan tentang untung, rugi, dan user engagement. Percakapan seperti itulah yang dibutuhkan Product Owner yang sebenarnya untuk rutin mengikuti Sprint Review."
       verdict: good
   fit: >-
     Scrum Guide menetapkan batas atas satu bulan dan menyerahkan panjangnya
-    kepada tim. Adendum ini memakai ruang itu: jaga Sprint cukup panjang
-    untuk beberapa putaran bersama pengguna, dan jadikan Sprint Review sesi
-    kerja tentang business outcome.
-  note: "Ilustrasi mekanismenya, bukan data hasil pengukuran."
+    kepada tim. Proposal ini memakai ruang itu: jaga Sprint cukup panjang
+    untuk beberapa iterasi bersama pengguna, sehingga Sprint Review bisa jadi
+    sesi kerja (baca: rapat bersama Product Owner dan stakeholder) tentang
+    business outcome. Scrum Guide memang menyarankan Sprint yang lebih pendek,
+    tapi ingat, itu saran sebelum datangnya AI. Jika mengacu ke prinsip bahwa
+    Sprint adalah tempat nilai ditinjau, maka lebih baik Sprint dibuat cukup
+    panjang untuk bisa meninjau business outcome.
 
 additions:
   bridge: "Jadi, apa yang perlu kita tambahkan ke Scrum agar ini berhasil?"
-  kicker: "Adendumnya"
+  kicker: "Proposalnya"
   title: "Empat tambahan. Tidak ada yang dibuang."
   intro: >-
     Setiap tambahan adalah praktik yang muat di dalam Scrum sebagaimana
@@ -193,13 +201,15 @@ additions:
   fit_label: "Mengapa selaras"
   source_label: "Scrum Guide 2020"
   gloss_label: "Terjemahan bebas"
+  gloss_toggle: "Terjemahan bebas"
+  gloss_toggle_short: "Terjemahan"
   items:
     - title: "Sprint Goal berupa business outcome, lengkap dengan satu outcome serep."
       body: >-
         Rumuskan Sprint Goal sebagai perubahan pada bisnis atau pada perilaku
         pengguna, bukan daftar hal yang akan dibangun. Karena AI bisa membuat
-        tim sampai di tujuan beberapa hari lebih awal, sepakati satu outcome
-        serep yang opsional saat Sprint Planning. Outcome serep hanya dipakai
+        tim mencapai Sprint Goal (di format business outcome) beberapa hari lebih awal,
+        sepakati satu outcome serep yang opsional saat Sprint Planning. Outcome serep hanya dipakai
         jika Sprint Goal tercapai sebelum Sprint Review tiba.
       example:
         label: "Contoh"
@@ -215,19 +225,23 @@ additions:
       fit: >-
         Outcome serep bukan Sprint Goal kedua. Sprint tetap punya satu tujuan
         tunggal; serep adalah outcome paling bernilai berikutnya, disepakati
-        sejak awal agar tim tidak hanyut ke pekerjaan tak terencana. Selesai
+        sejak awal agar tim tidak hanyut ke pekerjaan tak terencana saat Product
+        Owner tidak bisa datang secara ad-hoc untuk bertemu Developers. Selesai
         lebih awal bukan alasan memperpendek Sprint; itu ruang untuk satu
-        putaran lagi bersama pengguna.
+        iterasi lagi bersama pengguna.
     - title: "Proxy atau scribe Product Owner belajar menjadi Developer."
       body: >-
-        Jika di tim Anda ada orang yang tugasnya meneruskan keinginan pengambil
-        keputusan yang sebenarnya, atau yang terutama menulis tiket, lapisan
-        penerjemah itulah yang paling banyak dipangkas AI. Pengetahuan produk
-        mereka terlalu berharga untuk hilang. Langkahnya adalah menjadi
-        Developer: orang yang mengubah pengetahuan itu langsung menjadi
-        Increment yang bisa dipakai, sementara AI yang mengetik. Akuntabilitas
-        Product Owner dipegang oleh satu orang yang benar-benar memiliki
-        business outcome.
+        Jika di tim Anda ada orang yang tugasnya meneruskan keinginan
+        pengambil keputusan yang sebenarnya, atau yang terutama menulis
+        tiket/item/PRD, lapisan penerjemah itulah yang paling banyak dipangkas
+        AI — perannya yang dipangkas, bukan orangnya. Pengetahuan produk
+        mereka terlalu berharga untuk hilang. Caranya adalah ikut menjadi
+        Developer. Ingat, Scrum Guide tidak pernah bilang bahwa Developer itu
+        adalah programmer. Developer adalah semua orang yang bertanggung jawab
+        membuat versi baru produk yang menghasilkan nilai baru. Kedalaman
+        pengetahuan dan analisis mantan proxy Product Owner tentu akan
+        bermanfaat. Akuntabilitas Product Owner dipegang oleh satu orang yang
+        benar-benar memiliki business outcome.
       quotes: [po_one, po_delegate, dev_def]
       fit: >-
         Scrum Guide tidak mengenal peran proxy atau scribe. Yang ada hanya satu
@@ -236,19 +250,19 @@ additions:
     - title: "Scrum Master mendorong agar update sampai ke pengguna secepat mungkin."
       body: >-
         Scrum Master terus mengajukan satu pertanyaan: siapa yang sudah memakai
-        ini? Setiap update yang selesai harus sampai ke pengguna nyata secepat
-        yang aman, bukan menunggu Sprint Review. Jika tidak, kecepatan AI akan
+        ini? Setiap update yang selesai harus sampai ke pengguna nyata (tidak harus
+        seluruh populasi, bisa sampel) secepat yang aman, bukan menunggu Sprint Review. Jika tidak, kecepatan AI akan
         menyeret seluruh organisasi ke tumpukan asumsi yang makin besar,
         persis seperti di era Waterfall.
       quotes: [inc_early, sm_barriers, empiricism]
       fit: >-
         Scrum Guide sudah menyatakan bahwa Sprint Review bukan gerbang rilis,
         dan sudah meminta Scrum Master menghilangkan penghalang antara
-        stakeholder dan Scrum Team. Dengan AI, layanan itu menjadi inti
+        stakeholder dan Scrum Team. Dengan AI, tugas Scrum Master tersebut menjadi inti
         pekerjaannya.
     - title: "Jaring pengaman teknis yang cukup kuat untuk kecepatan AI."
       body: >-
-        Kecepatan hanya berguna kalau aman. Sebelum mengandalkan delivery
+        Kecepatan tinggi mobil F1 hanya berguna kalau ada rem yang kuat. Sebelum mengandalkan delivery
         berkecepatan AI, tim butuh jaring pengaman yang menangkap apa yang
         tidak lagi dibaca manusia baris demi baris. Misalnya: automated test,
         continuous integration, rilis bertahap atau dengan feature flag,
@@ -256,8 +270,11 @@ additions:
         Done supaya tidak pernah menjadi pilihan.
       quotes: [dod_def, inc_verified, dod_not_met]
       fit: >-
-        Scrum Guide menyerahkan isi Definition of Done kepada tim dan
-        organisasinya. Tambahan ini menyatakan seberapa kuat ia harus dibuat.
+        Banyak yang mengira Scrum tidak peduli terhadap kualitas karena rilis
+        yang cepat dan sering. Mereka belum tahu aturan Definition of Done
+        yang memang bisa dibuat sangat detail dan menuntut terkait kualitas.
+        Dengan kecepatan dan otonomi AI, Definition of Done secara alami akan
+        sangat detail dan menuntut.
 
 # Free Indonesian renderings of the quoted passages, shown under the original.
 gloss:
@@ -282,12 +299,12 @@ gloss:
 
 proof:
   kicker: "Pengecekan"
-  title: "Masihkah ini Scrum? Ya, seutuhnya."
+  title: "Penerapan proposal ini masih dibilang Scrum? 100% masih."
   intro: >-
     Scrum Guide tegas dalam satu hal: bagiannya tidak boleh dibuang atau
-    diubah jika hasilnya tetap disebut Scrum. Sama jelasnya, Scrum dirancang
-    untuk mewadahi praktik lain di dalamnya.
-  table_title: "Apa yang diubah adendum ini"
+    diubah jika hasilnya tetap disebut Scrum. Proposal ini tidak melanggar atau
+    mengubah satu pun yang tertulis di Scrum Guide.
+  table_title: "Apa yang diubah proposal ini"
   unchanged: "Tidak berubah"
   rows:
     - k: "Akuntabilitas"
@@ -301,14 +318,14 @@ proof:
   added_v: "Empat ditambahkan"
   source: >-
     Kutipan diambil kata demi kata dari Scrum Guide, November 2020, karya Ken
-    Schwaber dan Jeff Sutherland, berlisensi CC BY-SA 4.0. Adendum ini usulan
+    Schwaber dan Jeff Sutherland, berlisensi CC BY-SA 4.0. Proposal ini
     independen, tidak didukung oleh para penulis Scrum Guide.
   read_guide: "Baca Scrum Guide selengkapnya"
 
 blog:
   kicker: "Blog"
   title: "Catatan tentang menjalankan Scrum bersama AI"
-  intro: "Catatan lapangan, contoh, dan argumen di balik adendum ini."
+  intro: "Catatan lapangan, contoh, dan argumen di balik proposal ini."
   all: "Semua tulisan"
   writers: "Penulis"
   website: "Situs web"
@@ -316,13 +333,13 @@ blog:
   no_posts: "Belum ada tulisan."
   empty: "Tulisan pertama sedang disiapkan."
   back: "Semua tulisan"
-  read_addendum: "Baca adendumnya"
+  read_addendum: "Baca proposalnya"
   other_lang: "Read in English"
   cta_title: "Tulisan ini bagian dari The AI-Era Scrum."
   cta_body: "Empat tambahan untuk Scrum bagi tim yang sebagian besar pekerjaan membangunnya dikerjakan AI, masing-masing dicocokkan dengan Scrum Guide."
 
 footer:
-  line: "Sebuah usulan adendum, terbuka untuk didiskusikan."
+  line: "Sebuah proposal, terbuka untuk didiskusikan."
   guide: "Scrum Guide"
   feed: "RSS feed"
   license: >-
@@ -332,5 +349,5 @@ footer:
 
 notfound:
   title: "Halaman tidak ditemukan"
-  body: "Halaman ini tidak ada. Adendumnya ada."
-  cta: "Ke halaman adendum"
+  body: "Halaman ini tidak ada. Proposalnya ada."
+  cta: "Ke halaman proposal"

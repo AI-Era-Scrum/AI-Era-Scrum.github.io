@@ -51,25 +51,25 @@ core:
   pre:
     era: "Pre-AI Sprint"
     title: "Cycle of Delivery Review"
-    label: "A Sprint drawn as a cycle. Building fills almost all of it, three items one after another, and the Sprint Review at the end checks whether they were delivered."
+    label: "A Sprint drawn as a cycle. Development fills almost all of it, three items one after another, and the Sprint Review at the end checks whether they were delivered."
     items: ["Referral page", "Invite email", "Reward banner"]
     result: "3 of 3 delivered ✓"
     question: "“Is it done? Are we on schedule?”"
-    body: "Building fills the Sprint. Users meet the work only at the Sprint Review, so the Review checks delivery: what got built and whether it is on schedule."
+    body: "Development fills the Sprint. Users only see the Increment at the end, so the Sprint Review checks delivery: what got built and whether it is on schedule. Because the Sprint only focuses on delivering a small part of the progress, in many cases users and stakeholders aren’t even invited to the Sprint Review."
   post:
     era: "Post-AI Sprint"
     title: "Cycle of Business Outcome Review"
-    label: "A Sprint of the same length drawn as a cycle. Building is short; three rounds of building, users and validation fill the Sprint, and the Sprint Review checks whether the business outcome was reached."
+    label: "A Sprint of the same length drawn as a cycle. Development is short; three iterations of development, users and validation fill the Sprint, and the Sprint Review checks whether the business outcome was reached."
     metric: "Customers who invited a friend"
     result: "Business outcome reached ✓"
     question: "“What is the business outcome? What do we learn from that?”"
-    body: "Building takes a fraction of the Sprint. The rest goes to rounds with users, so the Review checks the business outcome: profit, loss, user engagement."
+    body: "Development takes a fraction of the Sprint. The rest goes to observing user behavior and opinions, then brainstorming other ideas if the business outcome isn’t reached yet, so the Sprint Review checks the business outcome: profit, loss and user engagement."
   legend:
     plan: "plan"
-    build: "build"
+    build: "development"
     users: "users"
     validate: "validate"
-  note: "An illustration of the mechanism, not measured data."
+  note: "All illustrations on this page show only the mechanism, not measured data."
 
 shift:
   kicker: "The shift"
@@ -88,17 +88,17 @@ shift:
     - token: "Dev"
       role: "Developers"
       before: "Most of the Sprint goes into implementation detail."
-      now: "Pushed toward higher-level, more abstract thinking, which leaves more bandwidth and empathy for users."
+      now: "With AI taking over the implementation detail, Developers are pushed toward work that needs more zooming out and abstract thinking. Instructing the AI becomes only a small part of the job. Most of the time goes to recruiting user samples, interviewing users, reading usage metrics, and brainstorming how to reach the business outcome set by the Product Owner."
     - token: "SM"
       role: "Scrum Master"
       before: "Much of the energy goes to keeping a long delivery process moving."
-      now: "Free to focus on facilitating the interaction between Developers and users, the place where assumptions are validated and value is created."
+      now: "Free to focus on facilitating the interaction between Developers and users, the place where assumptions are validated and value is created. And of course still making sure the interaction between stakeholders, the Product Owner and the Developers runs smoothly."
 
 risk:
   bridge: "Why so much focus on users?"
   kicker: "The risk"
   title: "AI speed without users is Waterfall, only faster."
-  intro: "Building gets fast. Watch what fills the time that frees up."
+  intro: "If development gets faster, what do we spend the extra time on?"
   prev: "Previous step"
   next: "Next step"
   track_label: "One Sprint"
@@ -106,7 +106,7 @@ risk:
   after: "With AI"
   stages:
     plan: "Plan"
-    build: "Build"
+    build: "Development"
     test: "Review"
   n3: "3 items"
   n9: "9 items"
@@ -117,16 +117,16 @@ risk:
   batch: "6 of 9 items unreviewed"
   steps:
     - "Before AI: three items are planned, built and reviewed. Users see them at the Sprint Review."
-    - "AI arrives. Building the same three items takes a fraction of the Sprint."
+    - "AI arrives. Developing the same three items takes a fraction of the Sprint."
     - "The habit stays: users still see the work only at the Sprint Review."
-    - "So building grows back to fill the Sprint, now with nine items."
+    - "So development grows back to fill the Sprint, now with nine items."
     - "Review has the same process and duration as before, so only three of nine get reviewed. Six unreviewed items: less confidence to show users at all."
     - "AI-powered development + pre-AI Scrum habits = Waterfall, faster."
   board:
     title: "The same story on a whiteboard"
     habit: "habit unchanged:|users only at the Review"
     notes:
-      - "Build speed ↑"
+      - "Development speed ↑"
       - "Spare time in the Sprint ↑"
       - "Items per Sprint ↑"
       - "Unreviewed items ↑"
@@ -135,53 +135,60 @@ risk:
     loop: "R"
     loop_note: "reinforcing loop"
     verdict: "= Waterfall, faster"
-  note: "An illustration of the mechanism, not measured data."
 
 length:
   kicker: "Sprint length"
   title: "That is also why shortening the Sprint is the wrong move."
   intro: >-
-    With AI, building and testing are quick. The scarce thing in a Sprint is
-    no longer build time; it is rounds with users. A Sprint needs room for
+    With AI, development and testing are quick. The scarce thing in a Sprint is
+    no longer development time; it is iterations with users. A Sprint needs room for
     the Developers to go to users, validate the assumptions about value,
     rebuild the solution, and go again, several times if needed, until the
     business outcome is reached.
   short: "Shortened Sprint"
   full: "Full Sprint"
-  round: "Round"
-  build: "build"
+  round: "Iteration"
+  build: "development"
   users: "users"
   learn: "learn"
   outcome_hit: "Business outcome reached"
   outcome_miss: "Business outcome not reached"
   review: "Sprint Review"
   talk_short: "The talk is about timeline: “Is it done? When?”"
-  talk_full: "The talk is about value: profit, loss, user engagement."
+  talk_full: "The talk is about value: profit, loss and user engagement."
   po_short: "The real Product Owner has no reason to attend."
   po_full: "The real Product Owner has every reason to attend."
-  counter: "Rounds with users"
+  counter: "Iterations with users"
+  ctl:
+    prev: "Previous step"
+    next: "Next step"
+    pause: "Pause animation"
+    play: "Play animation"
   cue_bad: "Bad"
   cue_good: "Good"
   columns:
     - title: "Pre-AI Scrum"
-      body: "Building took the whole Sprint, so the Sprint Review was mostly about timeline and output. The real Product Owner had little incentive to attend, and the proxy or scribe Product Owner was born."
+      body: "Development took the whole Sprint, so the Sprint Review was mostly about timeline and output. The real Product Owner had little incentive to attend, and the proxy or scribe Product Owner was born."
       verdict: bad
     - title: "AI + shortened Sprint"
-      body: "Fewer rounds with users fit, the outcome is cut short, and the Review slides back to timeline talk. The speed gain is spent on more meetings instead of more validation."
+      body: "Fewer iterations with users fit, the outcome is cut short, and the Review slides back to timeline talk. The speed gain is spent on more meetings instead of more validation."
       verdict: bad
     - title: "AI + full Sprint"
-      body: "Several rounds with users fit in one Sprint, so the business outcome can actually be reached and the Review becomes a conversation about profit, loss and engagement. That is a conversation the real Product Owner wants to be in."
+      body: "Several iterations with users fit in one Sprint, so the business outcome can actually be reached and the Review becomes a conversation about profit, loss and user engagement. That is the conversation the real Product Owner needs in order to attend the Sprint Review regularly."
       verdict: good
   fit: >-
     The Scrum Guide sets a ceiling of one month and leaves the length to the
-    team. The addendum uses that room: keep the Sprint long enough for
-    several rounds with users, and make the Sprint Review a working session
-    about the business outcome.
-  note: "An illustration of the mechanism, not measured data."
+    team. This proposal uses that room: keep the Sprint long enough for
+    several iterations with users, so the Sprint Review can become a working
+    session (read: a meeting with the Product Owner and stakeholders) about
+    the business outcome. The Scrum Guide does suggest shorter Sprints, but
+    remember, that advice came before AI. If we go by the principle that the
+    Sprint is where value is reviewed, then it is better to make the Sprint
+    long enough to actually review the business outcome.
 
 additions:
   bridge: "So, what should we add to Scrum to make this work?"
-  kicker: "The addendum"
+  kicker: "The proposal"
   title: "Four additions. Nothing removed."
   intro: >-
     Each addition is a practice that fits inside Scrum as written. Next to
@@ -194,8 +201,8 @@ additions:
     - title: "The Sprint Goal is a business outcome, with a spare one ready."
       body: >-
         State the Sprint Goal as a change in the business or in what users do,
-        never as a list of things to build. Because AI can get you there days
-        early, agree on one optional spare outcome during Sprint Planning. It
+        never as a list of things to build. Because AI can get the team to the Sprint Goal (in business-outcome
+        form) days early, agree on one optional spare outcome during Sprint Planning. It
         only comes into play if the Sprint Goal is achieved before the Sprint
         Review.
       example:
@@ -212,18 +219,21 @@ additions:
       fit: >-
         The spare outcome is not a second Sprint Goal. The Sprint keeps its
         single objective; the spare is the next most valuable outcome, agreed
-        in advance so the team doesn’t drift into unplanned work. Finishing
-        early is not a reason to shorten the Sprint; it is room for another
-        round with users.
+        in advance so the team doesn’t drift into unplanned work when the Product Owner can’t
+        come ad hoc to meet the Developers. Finishing early is not a reason to
+        shorten the Sprint; it is room for another iteration with users.
     - title: "A proxy or scribe Product Owner learns to develop."
       body: >-
         If your team has someone who relays the real decision-maker’s wishes,
-        or who mainly writes tickets, that translation layer is what AI
-        shrinks the most. Their product knowledge is too valuable to lose. The
-        move is to become a Developer: someone who turns that knowledge
-        directly into usable Increments, with AI doing the typing. The Product
-        Owner accountability goes to the one person who truly owns the
-        business outcome.
+        or who mainly writes tickets/items/PRDs, that translation layer is
+        what AI shrinks the most — it is the role that gets cut, not the
+        person. Their product knowledge is too valuable to lose. The way in is
+        to join as a Developer. Remember, the Scrum Guide never says a
+        Developer is a programmer. Developers are everyone responsible for
+        creating each new version of the product that delivers new value. The
+        depth of knowledge and analysis a former proxy Product Owner has will
+        clearly be useful. The Product Owner accountability goes to the one
+        person who truly owns the business outcome.
       quotes: [po_one, po_delegate, dev_def]
       fit: >-
         The Scrum Guide has no proxy or scribe role. It has one Product Owner
@@ -232,19 +242,19 @@ additions:
     - title: "The Scrum Master pushes for updates to reach users as soon as possible."
       body: >-
         The Scrum Master keeps asking one question: who has used this yet?
-        Every finished update should reach real users as early as it safely
-        can, not wait for the Sprint Review. Otherwise AI speed pulls the
+        Every finished update should reach real users (not necessarily the
+        whole population; a sample will do) as early as it safely can, not wait for the Sprint Review. Otherwise AI speed pulls the
         whole organization into ever bigger piles of assumptions, just like in
         the Waterfall era.
       quotes: [inc_early, sm_barriers, empiricism]
       fit: >-
         The Guide already says the Sprint Review is not a release gate, and
         already asks the Scrum Master to remove barriers between stakeholders
-        and the Scrum Team. With AI, that service moves to the centre of the
+        and the Scrum Team. With AI, that Scrum Master task moves to the centre of the
         job.
     - title: "A technical safety net strong enough for AI speed."
       body: >-
-        Speed only helps if it is safe. Before a team leans on AI-paced
+        An F1 car’s top speed only helps if it has strong brakes. Before a team leans on AI-paced
         delivery, it needs a safety net that catches what people no longer
         read line by line. For example: automated tests, continuous
         integration, staged or flagged releases, monitoring and quick
@@ -252,18 +262,20 @@ additions:
         optional.
       quotes: [dod_def, inc_verified, dod_not_met]
       fit: >-
-        The Guide leaves the content of the Definition of Done to the team and
-        its organization. This addition says what it must be strong enough
-        for.
+        Many people assume Scrum doesn’t care about quality because it
+        releases fast and often. They haven’t seen how the Definition of Done
+        can be made very detailed and demanding about quality. With the speed
+        and autonomy of AI, the Definition of Done will naturally become very
+        detailed and demanding.
 
 proof:
   kicker: "The check"
-  title: "Is this still Scrum? Yes, in its entirety."
+  title: "Does applying this proposal still count as Scrum? 100% yes."
   intro: >-
     The Scrum Guide is strict about one thing: you cannot remove or change its
-    parts and still call the result Scrum. It is just as clear that Scrum is
-    meant to hold other practices inside it.
-  table_title: "What the addendum changes"
+    parts and still call the result Scrum. This proposal does not violate or change a
+    single thing written in the Scrum Guide.
+  table_title: "What the proposal changes"
   unchanged: "Unchanged"
   rows:
     - k: "Accountabilities"
@@ -277,14 +289,14 @@ proof:
   added_v: "Four added"
   source: >-
     Quotations are word for word from the Scrum Guide, November 2020, by Ken
-    Schwaber and Jeff Sutherland, under CC BY-SA 4.0. This addendum is an
-    independent proposal, not endorsed by the authors of the Scrum Guide.
+    Schwaber and Jeff Sutherland, under CC BY-SA 4.0. This proposal is
+    independent, not endorsed by the authors of the Scrum Guide.
   read_guide: "Read the full Scrum Guide"
 
 blog:
   kicker: "Blog"
   title: "Notes on practicing Scrum with AI"
-  intro: "Field notes, examples and arguments behind the addendum."
+  intro: "Field notes, examples and arguments behind the proposal."
   all: "All posts"
   writers: "Writers"
   website: "Website"
@@ -292,13 +304,13 @@ blog:
   no_posts: "No posts yet."
   empty: "The first post is on its way."
   back: "All posts"
-  read_addendum: "Read the addendum"
+  read_addendum: "Read the proposal"
   other_lang: "Baca dalam Bahasa Indonesia"
   cta_title: "This post is part of The AI-Era Scrum."
   cta_body: "Four additions to Scrum for teams where AI does most of the building, each checked against the Scrum Guide."
 
 footer:
-  line: "A proposed addendum, open for discussion."
+  line: "A proposal, open for discussion."
   guide: "Scrum Guide"
   feed: "RSS feed"
   license: >-
@@ -307,5 +319,5 @@ footer:
 
 notfound:
   title: "Page not found"
-  body: "This page isn’t here. The addendum is."
-  cta: "Go to the addendum"
+  body: "This page isn’t here. The proposal is."
+  cta: "Go to the proposal"

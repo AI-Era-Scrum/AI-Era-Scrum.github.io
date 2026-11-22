@@ -323,7 +323,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .tr-bar { display: flex; gap: 6px; height: clamp(54px, 8.4vh, 70px); padding: 6px; border: 1.5px solid var(--chalk-line); border-radius: 12px; position: relative; }
 .sg { display: grid; place-items: center; align-content: center; gap: 2px; min-width: 0; flex: 1 1 0; border-radius: 7px; background: var(--chalk); color: var(--pitch-deep); font-style: normal; font-weight: 700; font-size: 0.82rem; line-height: 1.1; overflow: hidden; white-space: nowrap; transition: flex-grow 0.9s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s, color 0.5s; }
 .sg b { white-space: normal; text-align: center; line-height: 1.05; padding-inline: 3px; }
-.sg-plan, .sg-test { min-width: min-content; }
+.sg-plan, .sg-build, .sg-test { min-width: min-content; }
 .sg small { font-size: 0.7rem; font-weight: 600; opacity: 0.75; display: grid; }
 .sg-build b, .sg-build small { position: relative; z-index: 1; }
 [data-step="4"] .track-after .sg-build b, [data-step="5"] .track-after .sg-build b,
@@ -410,9 +410,9 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .ln-count span { font-weight: 800; color: var(--green); font-size: 1rem; }
 .ln-box { position: relative; height: 80px; border: 1.5px solid var(--ink); border-radius: 12px; background: var(--sheet); overflow: hidden; }
 .ln-short .ln-box { width: 44%; }
-.rounds { position: absolute; inset: 8px 30px 8px 8px; display: flex; gap: 8px; }
+.rounds { position: absolute; inset: 8px 42px 8px 8px; display: flex; gap: 8px; }
 .rd { flex: 1 1 0; display: flex; gap: 3px; opacity: 0; transform: translateX(-10px); transition: opacity 0.4s, transform 0.4s; }
-.rd i { display: grid; place-items: center; font-style: normal; font-size: 0.68rem; font-weight: 700; border-radius: 6px; min-width: 0; overflow: hidden; }
+.rd i { display: grid; place-items: center; text-align: center; line-height: 1.1; font-style: normal; font-size: 0.68rem; font-weight: 700; border-radius: 6px; min-width: 0; overflow: hidden; }
 .rd-build { flex: 1; background: var(--ball); color: var(--pitch-deep); font-size: 0; }
 .rd-users { flex: 3; background: var(--pitch); color: var(--chalk); }
 .rd-learn { flex: 1.4; background: #cfe9d8; color: var(--pitch-deep); font-size: 0; }
@@ -422,7 +422,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .sw-build { background: var(--ball); } .sw-users { background: var(--pitch); } .sw-learn { background: #cfe9d8; }
 .ln-short .rd { flex: 0 0 calc(50% - 4px); }
 .ln-wall { position: absolute; top: 0; bottom: 0; right: 0; width: 6px; background: var(--ink); }
-.ln-wall span { position: absolute; right: 10px; top: 50%; transform: translateY(-50%) rotate(180deg); writing-mode: vertical-rl; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); white-space: nowrap; }
+.ln-wall span { position: absolute; right: 10px; top: 50%; transform: translateY(-50%) rotate(180deg); writing-mode: vertical-rl; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; line-height: 1.25; text-align: center; text-transform: uppercase; color: var(--ink-dim); white-space: nowrap; }
 .rd.on { opacity: 1; transform: none; }
 .ln-result { margin-top: 14px; display: grid; gap: 6px; font-size: 0.95rem; }
 .ln-outcome { font-weight: 800; }
@@ -635,4 +635,50 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- play / pause / step control for the sprint-length animation ---------- */
+.len-ctl { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+.len-ctl[hidden] { display: none; }
+.lc-btn { display: grid; place-items: center; width: 40px; height: 40px; padding: 0 0 4px; border: 1.5px solid var(--ink); border-radius: 50%; background: none; color: var(--ink); font: 400 1.7rem/1 var(--body); cursor: pointer; transition: background 0.2s, color 0.2s; }
+.lc-btn:hover { background: var(--ink); color: var(--sheet); }
+.lc-btn:focus-visible, .gloss-btn:focus-visible { outline: 3px solid var(--ball); outline-offset: 2px; }
+.lc-play { padding: 0; }
+.ic-pause { width: 14px; height: 14px; border-left: 4px solid currentColor; border-right: 4px solid currentColor; }
+.ic-play { display: none; width: 0; height: 0; margin-left: 3px; border-left: 12px solid currentColor; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.len-ctl.paused .ic-pause { display: none; }
+.len-ctl.paused .ic-play { display: block; }
+
+/* ---------- toggle for the free Indonesian translations of Scrum Guide quotes ---------- */
+html.js:not(.gloss-on) .gq-gloss, html.js:not(.gloss-on) .core-gloss { display: none; }
+.gloss-btn { display: inline-flex; align-items: center; gap: 8px; flex: none; padding: 6px 13px 6px 8px; border: 1px solid var(--chalk-line); border-radius: 999px; background: none; color: var(--chalk-dim); font: 700 0.78rem/1 var(--body); letter-spacing: 0.04em; white-space: nowrap; cursor: pointer; transition: color 0.2s, border-color 0.2s; }
+.gloss-btn[hidden] { display: none; }
+.gloss-btn:hover { color: var(--chalk); }
+.gloss-btn i { position: relative; width: 26px; height: 16px; border-radius: 999px; background: rgba(241, 239, 228, 0.25); transition: background 0.2s; }
+.gloss-btn i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--chalk); transition: transform 0.2s, background 0.2s; }
+.gloss-btn[aria-pressed="true"] { color: var(--chalk); border-color: var(--ball); }
+.gloss-btn[aria-pressed="true"] i { background: var(--ball); }
+.gloss-btn[aria-pressed="true"] i::after { transform: translateX(10px); background: var(--pitch-deep); }
+.gloss-btn .gb-short { display: none; }
+@media (max-width: 1060px) { .js .gloss-btn { margin-left: auto; } .js .gloss-btn + .lang { margin-left: 0; } }
+@media (max-width: 700px) { .gloss-btn .gb-long { display: none; } .gloss-btn .gb-short { display: inline; } }
+@media (max-width: 460px) { .gloss-btn { padding: 8px; } .gloss-btn .gb-short { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+
+/* phones: give the "users" segment room so peng-/guna fits on two lines */
+@media (max-width: 560px) {
+  .rounds { gap: 4px; }
+  .rd { gap: 2px; }
+  .ln-short .rd { flex-basis: calc(50% - 2px); }
+  .rd .rd-build { flex: 0.6; }
+  .rd .rd-learn { flex: 0.9; }
+  .rd .rd-users { flex: 3; font-size: 0.6rem; }
+}
+
+/* very small phones: make room for the translation toggle in the header */
+@media (max-width: 360px) {
+  .bar { gap: 8px; }
+  .brand { font-size: 0.9rem; }
+  .gloss-btn { padding: 6px; }
+  .lang a { padding: 5px 7px; }
+  .js .menu-btn { width: 40px; height: 40px; }
 }
