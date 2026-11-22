@@ -377,7 +377,7 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .eraser { width: 20px; height: 6px; background: #4a4a4a; }
 .mk path, .mk-line { fill: none; stroke: #1d3b8b; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.7s ease-out; }
 .mk-text, .mk-r text, .mk-verdict { fill: #1d3b8b; font-size: 19px; font-weight: 700; opacity: 0; transition: opacity 0.5s; }
-.mk-text { font-size: 22px; fill: #b3261e; }
+.mk-text { font-size: 29.6px; fill: #b3261e; }
 .mk-r circle { fill: none; stroke: #b3261e; stroke-width: 3; stroke-dasharray: 160; stroke-dashoffset: 160; transition: stroke-dashoffset 0.7s ease-out; }
 .mk-r text { fill: #b3261e; font-size: 30px; }
 .mk-r .mk-small { font-size: 20px; font-weight: 500; }
