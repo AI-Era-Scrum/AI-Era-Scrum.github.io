@@ -37,7 +37,7 @@ layout: default
       {%- assign hb = site.data.guide.quotes.heartbeat %}
       <p class="sec-intro core-intro">{{ t.core.intro_lead }}
         <q class="core-quote" lang="en" cite="{{ site.data.guide.url }}#{{ hb.anchor }}">{{ hb.text }}</q>
-        {%- if t.gloss.heartbeat %} <span class="core-gloss">({{ t.additions.gloss_label }}: {{ t.gloss.heartbeat }})</span>{% endif %}
+        {%- if t.gloss.heartbeat %} <button type="button" class="gq-tgl" aria-expanded="false" aria-controls="gl-heartbeat">{{ t.additions.gloss_label }}</button> <span class="core-gloss" id="gl-heartbeat">({{ t.additions.gloss_label }}: {{ t.gloss.heartbeat }})</span>{% endif %}
       </p>
     </header>
     <div class="timeline reveal" aria-hidden="true">

@@ -201,8 +201,6 @@ additions:
   fit_label: "Mengapa selaras"
   source_label: "Scrum Guide 2020"
   gloss_label: "Terjemahan bebas"
-  gloss_toggle: "Terjemahan bebas"
-  gloss_toggle_short: "Terjemahan"
   items:
     - title: "Sprint Goal berupa business outcome, lengkap dengan satu outcome serep."
       body: >-

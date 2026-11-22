@@ -642,27 +642,24 @@ h1 { display: grid; gap: clamp(10px, 2vh, 18px); }
 .len-ctl[hidden] { display: none; }
 .lc-btn { display: grid; place-items: center; width: 40px; height: 40px; padding: 0 0 4px; border: 1.5px solid var(--ink); border-radius: 50%; background: none; color: var(--ink); font: 400 1.7rem/1 var(--body); cursor: pointer; transition: background 0.2s, color 0.2s; }
 .lc-btn:hover { background: var(--ink); color: var(--sheet); }
-.lc-btn:focus-visible, .gloss-btn:focus-visible { outline: 3px solid var(--ball); outline-offset: 2px; }
+.lc-btn:focus-visible { outline: 3px solid var(--ball); outline-offset: 2px; }
 .lc-play { padding: 0; }
 .ic-pause { width: 14px; height: 14px; border-left: 4px solid currentColor; border-right: 4px solid currentColor; }
 .ic-play { display: none; width: 0; height: 0; margin-left: 3px; border-left: 12px solid currentColor; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
 .len-ctl.paused .ic-pause { display: none; }
 .len-ctl.paused .ic-play { display: block; }
 
-/* ---------- toggle for the free Indonesian translations of Scrum Guide quotes ---------- */
-html.js:not(.gloss-on) .gq-gloss, html.js:not(.gloss-on) .core-gloss { display: none; }
-.gloss-btn { display: inline-flex; align-items: center; gap: 8px; flex: none; padding: 6px 13px 6px 8px; border: 1px solid var(--chalk-line); border-radius: 999px; background: none; color: var(--chalk-dim); font: 700 0.78rem/1 var(--body); letter-spacing: 0.04em; white-space: nowrap; cursor: pointer; transition: color 0.2s, border-color 0.2s; }
-.gloss-btn[hidden] { display: none; }
-.gloss-btn:hover { color: var(--chalk); }
-.gloss-btn i { position: relative; width: 26px; height: 16px; border-radius: 999px; background: rgba(241, 239, 228, 0.25); transition: background 0.2s; }
-.gloss-btn i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--chalk); transition: transform 0.2s, background 0.2s; }
-.gloss-btn[aria-pressed="true"] { color: var(--chalk); border-color: var(--ball); }
-.gloss-btn[aria-pressed="true"] i { background: var(--ball); }
-.gloss-btn[aria-pressed="true"] i::after { transform: translateX(10px); background: var(--pitch-deep); }
-.gloss-btn .gb-short { display: none; }
-@media (max-width: 1060px) { .js .gloss-btn { margin-left: auto; } .js .gloss-btn + .lang { margin-left: 0; } }
-@media (max-width: 700px) { .gloss-btn .gb-long { display: none; } .gloss-btn .gb-short { display: inline; } }
-@media (max-width: 460px) { .gloss-btn { padding: 8px; } .gloss-btn .gb-short { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
+/* ---------- per-quote toggle for the free Indonesian translations ---------- */
+.js .gq:not(.open) .gq-gloss, .js .core-intro:not(.open) .core-gloss { display: none; }
+.gq-tgl { display: none; }
+.js .gq-tgl { display: inline; padding: 0; border: 0; background: none; color: var(--green); font: inherit; letter-spacing: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.gq-tgl::after { content: " ▾"; display: inline-block; text-decoration: none; transition: transform 0.2s; }
+.open > .gq-tgl::after, .gq.open .gq-tgl::after, .core-intro.open .gq-tgl::after { transform: rotate(180deg); }
+.gq-tgl:hover { color: var(--ink); }
+.gq-tgl:focus-visible { outline: 3px solid var(--ball); outline-offset: 2px; border-radius: 3px; }
+.proof .gq-tgl { color: var(--ball); }
+.proof .gq-tgl:hover { color: var(--chalk); }
+.gq-gloss { margin-top: 6px; }
 
 /* phones: give the "users" segment room so peng-/guna fits on two lines */
 @media (max-width: 560px) {
@@ -672,13 +669,4 @@ html.js:not(.gloss-on) .gq-gloss, html.js:not(.gloss-on) .core-gloss { display: 
   .rd .rd-build { flex: 0.6; }
   .rd .rd-learn { flex: 0.9; }
   .rd .rd-users { flex: 3; font-size: 0.6rem; }
-}
-
-/* very small phones: make room for the translation toggle in the header */
-@media (max-width: 360px) {
-  .bar { gap: 8px; }
-  .brand { font-size: 0.9rem; }
-  .gloss-btn { padding: 6px; }
-  .lang a { padding: 5px 7px; }
-  .js .menu-btn { width: 40px; height: 40px; }
 }

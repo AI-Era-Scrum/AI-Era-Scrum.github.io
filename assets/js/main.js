@@ -266,19 +266,11 @@
     }, { threshold: 0.3 }).observe(len);
   }
 
-  /* ---- show or hide the free Indonesian translations of Scrum Guide quotes ---- */
-  const glossBtn = document.getElementById("gloss-btn");
-  if (glossBtn) {
-    const root = document.documentElement;
-    const set = (on, save) => {
-      root.classList.toggle("gloss-on", on);
-      glossBtn.setAttribute("aria-pressed", on);
-      if (save) { try { localStorage.setItem("gloss", on ? "1" : "0"); } catch (e) {} }
-    };
-    let on = false;
-    try { on = localStorage.getItem("gloss") === "1"; } catch (e) {}
-    glossBtn.hidden = false;
-    set(on, false);
-    glossBtn.addEventListener("click", () => set(!root.classList.contains("gloss-on"), true));
-  }
+  /* ---- each Scrum Guide quote: show or hide its free Indonesian translation ---- */
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".gq-tgl");
+    if (!b) return;
+    const box = b.closest(".gq, .core-intro");
+    b.setAttribute("aria-expanded", box.classList.toggle("open"));
+  });
 })();
